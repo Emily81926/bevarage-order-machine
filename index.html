@@ -15,6 +15,33 @@
 </head>
 <body>
  
+  <div class="container">
+    <h2 class="text-center text-light pt-4">Alpha Pos System</h2>
+    <div class="row">
+      <div class="col-md-4 p-4" data-order-list>
+        <div class="card mb-3">
+          <div class="card-body pt-3 pr-3">
+            <div class="text-right">
+              <span data-alpha-post="delete-drink">x</span>
+            </div>
+            <h6 class="card-title mb-1">Black tea</h6>
+            <div class="card-text">Less ice</div>
+            <div class="card-text">Half sugar</div>
+          </div>
+          <div class="card-footer text-right py-2">
+            <div class="card-text text-muted">
+              $ <span data-drink-price>30</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-right">
+          <button class="btn btn-light" style="min-width: 120px;" data-alpha-post="checkout">Checkout</button>
+        </div>
+      </div>
+      <div class="col-md-8"></div>
+    </div>
+  </div>
   
   <!-- popper, jquery, bootstrap -->
   <script src="./index.js"></script>
