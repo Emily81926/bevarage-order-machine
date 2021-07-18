@@ -13,7 +13,7 @@ Drink.prototype.price = function(){
     case 'Green Tea':
       return 30
     case 'Bubble Milk Tea':
-    case 'Lemon Green Tea':
+    case 'Lemon Green':
       return 50
     case 'Black Tea Latte':
     case 'Matcha Latte':
@@ -90,4 +90,26 @@ orderLists.addEventListener('click',function(event){
 
 AlphaPos.prototype.deleteDrink = function (target){
   target.remove()
+}
+
+AlphaPos.prototype.checkout = function (){
+  let totalAmount = 0
+  document.querySelectorAll('[data-drink-price]').forEach(function(drink){
+    totalAmount += Number(drink.textContent)
+  })
+  return totalAmount
+}
+
+const checkoutButton = document.querySelector('[data-alpha-pos="checkout"]')
+checkoutButton.addEventListener('click',function(){
+  
+  alert(`Total amount of drinks: $${alphaPos.checkout()}`)
+
+  alphaPos.clearOrder(orderLists)
+})
+
+AlphaPos.prototype.clearOrder = function(target){
+target.querySelectorAll('.card').forEach(function(card){
+  card.remove()
+})
 }
